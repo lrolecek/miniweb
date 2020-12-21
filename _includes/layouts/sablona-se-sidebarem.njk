@@ -1,0 +1,39 @@
+---
+layout: layouts/hlavni
+---
+
+<div class="grid">
+
+	<main class="main">
+		{{ content | safe }}
+	</main>
+
+	<aside class="sidebar">
+
+		<h2>Nejnovější na blogu</h2>
+
+		{% for clanek in collections.clanky | reverse %}
+
+			{% if loop.index <= 1 %}
+
+				<h3>
+					<a href="{{ clanek.url }}">{{ clanek.data.title }}</a>
+				</h3>
+
+				<p>{{ clanek.data.souhrn }}</p>
+
+			{% endif %}
+
+		{% endfor %}
+
+		<hr>
+
+		<h2>Sidebar</h2>
+
+		<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id, veritatis aut nisi molestias reprehenderit quisquam alias repudiandae perferendis aliquam debitis.</p>
+
+		<p>Corporis ullam provident quasi ipsa corrupti sunt accusamus voluptate eos quia! Tenetur debitis voluptatibus non laborum provident esse tempore quos!</p>
+
+	</aside>
+
+</div>

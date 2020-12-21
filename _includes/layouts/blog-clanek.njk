@@ -1,0 +1,25 @@
+---
+layout: layouts/hlavni
+---
+
+<main class="main">
+
+	{{ content | safe }}
+
+	{% if cena < 500 %}
+		<p><strong>SUPER CENA!!!!</strong></p>
+	{% endif %}
+
+	{% if cena == 500 %}
+		<p><strong>Průměrná cena. Pětikilčo!</strong></p>
+	{% endif %}
+
+	{% if cena > 500 %}
+		<p><strong>Kristova noho, to je hrozně drahý</strong></p>
+	{% endif %}
+
+	<hr>
+
+	<a href="/blog/">Zpět na přehled</a>
+
+</main>

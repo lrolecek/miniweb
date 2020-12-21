@@ -1,0 +1,26 @@
+---
+layout: layouts/sablona
+title: Blog
+---
+
+<h2>Seznam článků</h2>
+
+{% for clanek in collections.clanky | reverse %}
+
+	<img src="/images/{{ clanek.data.obrazek }}" width="200" alt="">
+
+	<h3>
+		<a href="{{ clanek.url }}">{{ clanek.data.title }}</a>
+	</h3>
+
+	<p>{{ clanek.data.souhrn }}</p>
+
+	{% if clanek.data.cena < 500 %}
+
+		<p><strong>SUPER CENA!!!!</strong></p>
+
+	{% endif %}
+
+	<hr>
+
+{% endfor %}
